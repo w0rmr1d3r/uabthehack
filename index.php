@@ -34,9 +34,9 @@
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>
           <div class="col-lg-4">
-              <button type="button" class="btn btn-success">Success</button>
-              <h3>Lorem ipsum</h3>
-              <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
+              <button type="button" class="btn btn-success">NEXT UPDATE</button>
+              <h3>FUTURE UPDATES</h3>
+              <p class="lead mb-0">upcoming soon...</p>
           </div>
         </div>
       </div>
