@@ -15,6 +15,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom_styles.css">
+
+    <script>
+    function loadXMLDoc()
+    {
+      var xmlhttp;
+      xmlhttp=new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+          document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+          }
+      }
+      xmlhttp.open("GET","controller/controller_groups.php",true);
+      xmlhttp.send();
+    }
+    </script>
+
   </head>
   <body>
     <h1>Hello, world!</h1>
@@ -23,8 +42,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
-              <button type="button" class="btn btn-success"><a href="controller/controller_groups.php" style="color:inherit">  SEE GROUP </a></button>
-              <h3></h3>
+              <button type="button" class="btn btn-success" onclick="loadXMLDoc()">SEE GROUP</button>
+              <div id="txtHint"><b>Group info will be listed here...</b></div>
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>
           <div class="col-lg-4">
