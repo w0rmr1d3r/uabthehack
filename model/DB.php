@@ -117,7 +117,7 @@ class DataBase
         {
             $stmt = $this->conn->prepare('INSERT INTO Assistance (persona_id, date, assistance_type) VALUES (?, ?, ?)');
             foreach ($assistance as $personaId => $personaAssistance) {
-                $stmt->bind_param('isi', $personaId, $date, $personaAssistance);
+                $stmt->bind_param('sss', $personaId, $date, $personaAssistance);
                 $stmt->execute();
             }
             $stmt->close();

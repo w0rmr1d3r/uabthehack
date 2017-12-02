@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `grupos`
 --
 
-CREATE TABLE `grupos` (
+CREATE TABLE `Groups` (
   `id` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -37,7 +37,7 @@ CREATE TABLE `grupos` (
 -- Estructura de tabla para la tabla `grupos_has_persones`
 --
 
-CREATE TABLE `grupos_has_persones` (
+CREATE TABLE `Groups_has_Personas` (
   `persona_id` varchar(50) NOT NULL,
   `grupos_id` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -48,7 +48,7 @@ CREATE TABLE `grupos_has_persones` (
 -- Estructura de tabla para la tabla `persona`
 --
 
-CREATE TABLE `persona` (
+CREATE TABLE `Personas` (
   `id` varchar(50) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL
