@@ -14,7 +14,7 @@ class DataBase
     private static $password = '';
 
     /* @var string Database name - LOCALHOST TEST */
-    private static $db_name = 'song_giver_db';
+    private static $db_name = 'uabTheHack';
 
     /* @var mysqli|null Database connection object */
     private $conn;
@@ -57,7 +57,7 @@ class DataBase
 
     public function getGroups()
     {
-        $query = 'SELECT id, name FROM Groups ORDER BY name';
+        $query = 'SELECT id, name FROM grupos ORDER BY name';
         if ($result = $this->conn->query($query))
         {
             $receivedGroups = [];
@@ -81,24 +81,24 @@ class DataBase
             $personasId = [];
             $personas = [];
 
-            $queryPersonasId = 'SELECT persona_id FROM Group_has_Personas WHERE group_id='. $groupId;
+            $queryPersonasId = 'SELECT persona_id FROM grupos_has_persones WHERE grupos_id='. $groupId;
             if ($result = $this->conn->query($queryPersonasId))
             {
                 while ($row = $result->fetch_assoc())
                 {
-                    array_push($personasId, $row['id']);
+                    array_push($personasId, $row['persona_id']);
                 }
                 $result->free();
             }
 
-            foreach ($personasId as $value)
+            foreach ($personasId as $id)
             {
-                $queryPersonas = 'SELECT id, name, last_name FROM Personas WHERE id='. $id;
+                $queryPersonas = 'SELECT id, name, lastname FROM persona WHERE id='. $id;
                 if ($result = $this->conn->query($queryPersonas))
                 {
                     while ($row = $result->fetch_assoc())
                     {
-                        array_push($personas, new Persona($row['id'], $row['name'], $row['last_name']));
+                        array_push($personas, new Persona($row['id'], $row['name'], $row['lastname']));
                     }
                     $result->free();
                 }
@@ -115,7 +115,7 @@ class DataBase
     {
         if (!is_null($date) && !is_null($assistance))
         {
-            $stmt = $this->conn->prepare('INSERT INTO Assistance (persona_id, date, assistance_type) VALUES (?, ?, ?)');
+            $stmt = $this->conn->prepare('INSERT INTO Assistance (persona_id, data, assistance_type) VALUES (?, ?, ?)');
             foreach ($assistance as $personaId => $personaAssistance) {
                 $stmt->bind_param('sss', $personaId, $date, $personaAssistance);
                 $stmt->execute();

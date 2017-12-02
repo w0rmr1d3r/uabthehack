@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb4
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 02-12-2017 a las 13:02:04
--- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
--- Versión de PHP: 7.0.19-1
+-- Host: localhost
+-- Generation Time: Dec 02, 2017 at 02:08 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,16 +19,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `uabTheHack`
+-- Database: `uabTheHack`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `grupos`
+-- Table structure for table `Assistance`
 --
 
-CREATE TABLE `Groups` (
+CREATE TABLE `Assistance` (
+  `persona_id` varchar(50) NOT NULL,
+  `data` varchar(50) NOT NULL,
+  `assistance_type` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `grupos`
+--
+
+CREATE TABLE `grupos` (
   `id` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -34,10 +49,10 @@ CREATE TABLE `Groups` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `grupos_has_persones`
+-- Table structure for table `grupos_has_persones`
 --
 
-CREATE TABLE `Groups_has_Personas` (
+CREATE TABLE `grupos_has_persones` (
   `persona_id` varchar(50) NOT NULL,
   `grupos_id` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -45,48 +60,49 @@ CREATE TABLE `Groups_has_Personas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `persona`
+-- Table structure for table `persona`
 --
 
-CREATE TABLE `Personas` (
+CREATE TABLE `persona` (
   `id` varchar(50) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `grupos`
+-- Indexes for table `grupos`
 --
 ALTER TABLE `grupos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `grupos_has_persones`
+-- Indexes for table `grupos_has_persones`
 --
 ALTER TABLE `grupos_has_persones`
   ADD PRIMARY KEY (`persona_id`,`grupos_id`),
   ADD KEY `grupos_id` (`grupos_id`);
 
 --
--- Indices de la tabla `persona`
+-- Indexes for table `persona`
 --
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`id`);
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `grupos_has_persones`
+-- Constraints for table `grupos_has_persones`
 --
 ALTER TABLE `grupos_has_persones`
   ADD CONSTRAINT `grupos_has_persones_ibfk_1` FOREIGN KEY (`persona_id`) REFERENCES `persona` (`id`),
   ADD CONSTRAINT `grupos_has_persones_ibfk_2` FOREIGN KEY (`grupos_id`) REFERENCES `grupos` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

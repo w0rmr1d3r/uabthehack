@@ -7,11 +7,9 @@ if ($_POST['assistance'])
 
     $todayDate = date('d-m-Y h:i:s');
     
-    /*
     $DB = DataBase::getInstance();
     $DB->insertAssistance($todayDate, $_POST['assistance']);
     $DB->closeConnection();
-    */
 
     header("Location: ../index.php");
 }

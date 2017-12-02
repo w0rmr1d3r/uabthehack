@@ -1,4 +1,4 @@
 /pdfmaker/.classpath
 /pdfmaker/.project
-/pdfmaker/.settings/*
-/pdfmaker/bin/*
+/pdfmaker/.settings/**
+/pdfmaker/bin/**
