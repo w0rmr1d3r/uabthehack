@@ -1,4 +1,4 @@
-<?php    
+<?php
 class DataBase
 {
     /* @var DataBase|null Singleton instance of class */
@@ -11,7 +11,7 @@ class DataBase
     private static $username = 'root';
 
     /* @var string Server password - LOCALHOST TEST */
-    private static $password = '';
+    private static $password = 'root';
 
     /* @var string Database name - LOCALHOST TEST */
     private static $db_name = 'uabTheHack';
@@ -30,7 +30,7 @@ class DataBase
             die('Connection failed: ' . $this->conn->connect_error);
         }
     }
-     
+
     /**
      * Gets instance of Singleton DB
      * @return DataBase
@@ -41,7 +41,7 @@ class DataBase
         {
             self::$instance = new DataBase();
         }
-     
+
         return self::$instance;
     }
 
@@ -125,7 +125,7 @@ class DataBase
         else
         {
             throw new Exception('NULL PARAMETERS GIVEN', 500);
-            
+
         }
     }
 

@@ -1,5 +1,5 @@
 <h3>Today is: <?php echo date('d-m-Y h:i:s'); ?></h3>
-<form method="POST" action="../controller/controller_assistance.php">
+<form method="POST" action="controller/controller_assistance.php">
     <table>
         <tr>
             <th>Name</th>
@@ -27,7 +27,7 @@
         </tr>
 <?php
         }
-?>  
+?>
     </table>
     <input type="submit" value="Check Assistance">
 </form>

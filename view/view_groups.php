@@ -1,27 +1,33 @@
 <html>
     <head>
-        <script src="../js/custom_js.js"></script>
-        <link rel="stylesheet" href="../css/custom_styles.css">
+        <script src="js/custom_js.js"></script>
+        <link rel="stylesheet" href="css/custom_styles.css">
     </head>
     <body>
         <div id="show-div">
-            <ul>
+              <table>
+                  <tr>
+                      <th>Name</th>
+                  </tr>
+
             <?php
                 foreach ($groups as $group)
                 {
             ?>
-                <li>
-                    <a href="#" onclick="seePersonasInGroup(<?php echo $group->getId(); ?>)">
-                        <?php echo $group->getName(); ?>
-                    </a>
-                </li>
+                  <tr>
+                    <td>
+                        <a href="#" onclick="seePersonasInGroup(<?php echo $group->getId(); ?>)">
+                          <?php echo $group->getName(); ?>
+                        </a>
+                    </td>
             <?php
                 }
-            ?>  
-            </ul>
+            ?>
+                  </tr>
+              </table>
         </div>
         <div>
-            <a href="../controller/controller_groups.php">Go to groups</a>
+            <a href="controller/controller_groups.php">Go to groups</a>
         </div>
     </body>
 </html>
