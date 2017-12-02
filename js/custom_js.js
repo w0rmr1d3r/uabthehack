@@ -43,3 +43,10 @@ function seePersonasInGroup(groupid) {
     xmlhttp.open('GET', 'controller/controller_personas_in_group.php?group_id=' + groupid);
     xmlhttp.send();
 }
+
+function login() {
+    console.log('hello world');
+    var xmlhttp = getXMLHTTP();
+    xmlhttp.open('POST', '../controller/controller_login.php');
+    xmlhttp.send();
+}
