@@ -5,12 +5,12 @@
     </head>
     <body>
         <div id="show-form-div">
-            <form action="../controller/controller_makepdf.php">
+            <form action="controller/controller_makepdf.php">
               Group: <br/>
               <input type="text" name="group"><br/>
               Date: <br/>
               <input type="text" name="date" ><br/>
-              <input type="button" value="submit">
+              <input type="submit" value="descargar">
             </form>
         </div>
     </body>

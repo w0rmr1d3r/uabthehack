@@ -28,7 +28,7 @@
         <img alt="" src="img/logo.jpg"/>
       </a>
     </div>
-    <section class="login">
+    <div class="login">
      <?php 
         if (isset($_SESSION))
         {
@@ -39,11 +39,11 @@
           require_once('view/view_login_bar.php');  
         }
       ?>
-    </section>
-
+    </div>
+</header>
 
    
-    <h1>Hello, world!</h1>
+    <h1>Have all under controll!</h1>
     <!-- Icons Grid -->
     <section class="bg-light text-center">
       <div class="container">
@@ -54,14 +54,12 @@
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>
           <div class="col-lg-4">
-              <button type="button" class="btn btn-success" onclick="seeForm()">Success</button>
+              <button type="button" class="btn btn-success" onclick="seeForm()">DOWNLOAD</button>
               <div id="show-form-div"><b>Form info will be listed here...</b></div>
-              <h3>DOWNLOAD</h3>
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>
           <div class="col-lg-4">
               <button type="button" class="btn btn-success">NEXT UPDATE</button>
-              <h3>FUTURE UPDATES</h3>
               <p class="lead mb-0">upcoming soon...</p>
           </div>
         </div>
