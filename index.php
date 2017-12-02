@@ -17,28 +17,22 @@
     <link rel="stylesheet" href="css/custom_styles.css">
 
     <script>
-    function showGroups(str) {
-      if (str == "") {
-          document.getElementById("txtHint").innerHTML = "";
-          return;
-      } else {
-          if (window.XMLHttpRequest) {
-              // code for IE7+, Firefox, Chrome, Opera, Safari
-              xmlhttp = new XMLHttpRequest();
-          } else {
-              // code for IE6, IE5
-              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    function loadXMLDoc()
+    {
+      var xmlhttp;
+      xmlhttp=new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+          document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
           }
-          xmlhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("txtHint").innerHTML = this.responseText;
-              }
-          };
-          xmlhttp.open("GET","controller/controller_groups.php?q="+str,true);
-          xmlhttp.send();
       }
-  }
-</script>
+      xmlhttp.open("GET","controller/controller_groups.php",true);
+      xmlhttp.send();
+    }
+    </script>
 
   </head>
   <body>
@@ -48,7 +42,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
-              <button type="button" class="btn btn-success" onclick="showGroups(this.value)">SEE GROUP</button>
+              <button type="button" class="btn btn-success" onclick="loadXMLDoc()">SEE GROUP</button>
               <div id="txtHint"><b>Group info will be listed here...</b></div>
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>
