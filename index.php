@@ -20,16 +20,29 @@
 
   </head>
   <body>
-    <?php 
-    if (isset($_SESSION))
-    {
-      require_once('view/view_success_login_bar.php');
-    }
-    else
-    {
-      require_once('view/view_login_bar.php');  
-    }
-    ?>
+     <div class="container">
+
+  <header class="main-header">
+    <div class="logo">
+      <a href="./index.php">
+        <img alt="" src="img/logo.jpg"/>
+      </a>
+    </div>
+    <section class="login">
+     <?php 
+        if (isset($_SESSION))
+        {
+          require_once('view/view_success_login_bar.php');
+        }
+        else
+        {
+          require_once('view/view_login_bar.php');  
+        }
+      ?>
+    </section>
+
+
+   
     <h1>Hello, world!</h1>
     <!-- Icons Grid -->
     <section class="bg-light text-center">
