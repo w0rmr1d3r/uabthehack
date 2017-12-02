@@ -16,24 +16,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom_styles.css">
 
-    <script>
-    function loadXMLDoc()
-    {
-      var xmlhttp;
-      xmlhttp=new XMLHttpRequest();
-
-      xmlhttp.onreadystatechange=function()
-        {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-          {
-          document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-          }
-      }
-      xmlhttp.open("GET","controller/controller_groups.php",true);
-      xmlhttp.send();
-    }
-    </script>
-
   </head>
   <body>
     <h1>Hello, world!</h1>
@@ -42,8 +24,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
-              <button type="button" class="btn btn-success" onclick="loadXMLDoc()">SEE GROUP</button>
-              <div id="txtHint"><b>Group info will be listed here...</b></div>
+              <button type="button" class="btn btn-success" onclick="seeGroup(id)">SEE GROUP</button>
+              <div id="show-div"><b>Group info will be listed here...</b></div>
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>
           <div class="col-lg-4">
