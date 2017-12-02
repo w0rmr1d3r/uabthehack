@@ -29,5 +29,5 @@
         }
 ?>  
     </table>
-    <input type="submit" name="Check Assistance">
+    <input type="submit" value="Check Assistance">
 </form>

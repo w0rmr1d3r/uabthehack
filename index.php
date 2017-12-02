@@ -11,13 +11,25 @@
 
     <!-- Custom JS -->
     <script src="js/custom_js.js"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom_styles.css">
 
   </head>
   <body>
+    <?php 
+    if (isset($_SESSION))
+    {
+      require_once('view/view_success_login_bar.php');
+    }
+    else
+    {
+      require_once('view/view_login_bar.php');  
+    }
+    ?>
     <h1>Hello, world!</h1>
     <!-- Icons Grid -->
     <section class="bg-light text-center">
@@ -41,9 +53,5 @@
         </div>
       </div>
     </section>
-
-
-
-
   </body>
 </html>

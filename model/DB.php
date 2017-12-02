@@ -128,5 +128,28 @@ class DataBase
             
         }
     }
+
+    public function checkLogin($email = NULL, $password = NULL)
+    {
+        /*if (!is_null($email) && !is_null($password))
+        {
+            $rows = -1;
+            $query = 'SELECT email FROM Admin WHERE email=' . $email . ' AND password=' . $password . ' LIMIT 1';
+            if ($stmt = $this->conn->prepare($query))
+            {
+                $stmt->execute();
+                $stmt->store_result();
+                $rows = $stmt->num_rows;
+                $stmt->close();
+            }
+            return $rows < 1;
+        }
+        else
+        {
+            throw new Exception('ERROR, NULL LOGIN PARAMS', 500);
+            
+        }*/
+        return TRUE;
+    }
 }
 ?>
