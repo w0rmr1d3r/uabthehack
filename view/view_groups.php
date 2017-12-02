@@ -1,7 +1,7 @@
 <html>
     <head>
-        <script src="../js/custom_js.js"></script>
-        <link rel="stylesheet" href="../css/custom_styles.css">
+        <script src="js/custom_js.js"></script>
+        <link rel="stylesheet" href="css/custom_styles.css">
     </head>
     <body>
         <div id="show-div">
