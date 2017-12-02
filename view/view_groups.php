@@ -26,8 +26,5 @@
                   </tr>
               </table>
         </div>
-        <div>
-            <a href="controller/controller_groups.php">Go to groups</a>
-        </div>
     </body>
 </html>

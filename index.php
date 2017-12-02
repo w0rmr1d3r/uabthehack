@@ -54,7 +54,8 @@
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>
           <div class="col-lg-4">
-              <button type="button" class="btn btn-success">Success</button>
+              <button type="button" class="btn btn-success" onclick="seeForm()">Success</button>
+              <div id="show-form-div"><b>Form info will be listed here...</b></div>
               <h3>DOWNLOAD</h3>
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>

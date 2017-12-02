@@ -50,3 +50,16 @@ function login() {
     xmlhttp.open('POST', '../controller/controller_login.php');
     xmlhttp.send();
 }
+
+function seeForm(){
+     var xmlhttp = getXMLHTTP();
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("show-form-div").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","controller/controller_form.php");
+        xmlhttp.send();
+    }
+}
