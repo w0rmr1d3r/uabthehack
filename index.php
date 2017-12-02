@@ -24,7 +24,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
-              <button type="button" class="btn btn-success" onclick="seeGroup(id)">SEE GROUP</button>
+              <button type="button" class="btn btn-success" onclick="seeGroup()">SEE GROUP</button>
               <div id="show-div"><b>Group info will be listed here...</b></div>
               <p class="lead mb-0">Lorem ipsum dolor sit amet.</p>
             </div>
