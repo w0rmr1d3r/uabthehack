@@ -32,7 +32,7 @@ CREATE TABLE `Assistance` (
   `persona_id` varchar(50) NOT NULL,
   `data` varchar(50) NOT NULL,
   `assistance_type` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 -- --------------------------------------------------------
